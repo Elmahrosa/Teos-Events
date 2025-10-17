@@ -1,7 +1,6 @@
-# teos-events
+# TEOS Events Elmahrosa
 Repository created autonomously  by Elmahrosa international 
 # TEOS Events
-
 Landing page for TEOS-powered civic and tactical events. Inspired by Elmahrosa International's Eventbrite profile.
 
 ## Features
