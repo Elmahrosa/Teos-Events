@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEOS Events</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <header class="bg-black text-white text-center py-8">
+    <img src="assets/logo.png" alt="TEOS Logo" class="mx-auto w-16 mb-2" />
+    <h1 class="text-3xl font-bold">TEOS Events</h1>
+    <p class="text-lg">Powered by Elmahrosa International</p>
+  </header>
+
+  <main class="max-w-3xl mx-auto p-6">
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Upcoming Events</h2>
+      <div id="events" class="space-y-4">
+        <!-- Events will be loaded here -->
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Secure Your Ticket</h2>
+      <div class="grid gap-4 md:grid-cols-2">
+        <!-- Fiat Payment -->
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-xl font-bold mb-2">💳 Pay with Card</h3>
+          <p class="mb-4 text-sm text-gray-600">3D Secure checkout via our trusted gateway.</p>
+          <a href="https://your-3d-secure-gateway.com/checkout?event=teos-launch" target="_blank"
+             class="block text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+            Pay with Card
+          </a>
+        </div>
+
+        <!-- Crypto Payment -->
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-xl font-bold mb-2">🪙 Pay with Crypto</h3>
+          <p class="mb-2 text-sm text-gray-600">Send USDT to the address below:</p>
+          <p class="font-mono text-sm bg-gray-100 p-2 rounded break-all">0xYourWalletAddressHere</p>
+          <img src="assets/usdt-qr.png" alt="USDT QR Code" class="w-32 mt-4 mx-auto" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 py-6">
+    &copy; 2025 TEOS Egypt • info@teosegypt.com
+  </footer>
+
+  <script>
+    const events = [
+      {
+        title: "TEOS Civic Launch: Alexandria",
+        date: "2025-10-22",
+        location: "Bibliotheca Alexandrina",
+        link: "https://eventbrite.com/e/teos-alexandria"
+      },
+      {
+        title: "Memecoin Tactical Drop",
+        date: "2025-10-25",
+        location: "Online",
+        link: "https://pump.fun/teosdrop"
+      }
+    ];
+
+    const container = document.getElementById('events');
+    events.forEach(event => {
+      const card = document.createElement('div');
+      card.className = 'bg-white p-4 rounded shadow';
+      card.innerHTML = `
+        <h3 class="text-xl font-bold">${event.title}</h3>
+        <p class="text-sm text-gray-600">${event.date} • ${event.location}</p>
+        <a href="${event.link}" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+          View & Register
+        </a>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
